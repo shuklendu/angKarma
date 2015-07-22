@@ -1,0 +1,22 @@
+describe('Person', function () {
+
+  var Person, visitor;
+  beforeEach(module('myApp'));
+  beforeEach(inject(function (_Person_) {
+    Person = _Person_;
+  }));
+
+
+  describe('#greet', function () {
+
+    it('greets UK visitors formally', function () {
+      expect(new Person('Nigel', 'UK').greet()).to.equal('Good day to you, Nigel.');
+    });
+
+    it('greets others visitors informally', function () {
+      expect(new Person('Ben', 'IN').greet()).to.equal('Hey Ben!');
+    });
+
+  });
+
+});

@@ -1,0 +1,16 @@
+angular.module('myApp', []);
+angular.module('myApp')
+  .factory('Person', function () {
+    return function Person (name, cnt) {
+      this.name = name;
+      this.country = cnt;
+      this.greet = function () {
+        if (this.country === 'UK') {
+          return 'Good day to you, ' + this.name + '.';
+        }
+        else {
+          return 'Hey ' + this.name + '!';
+        }
+      };
+    };
+  });
